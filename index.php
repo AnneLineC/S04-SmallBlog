@@ -75,7 +75,6 @@
 
             // On récupère l'objet category à afficher selon l'ID indiqué en $_GET
             $authorToDisplay = $authorsList[$authorId];
-            var_dump($authorToDisplay);
 
             // On prépare un tableau vide que l'on va remplir avec les articles correspondants à afficher
             $postsFromCurrentAuthor = [];
@@ -86,6 +85,17 @@
                 }
             }
 
+        }
+        else {
+            $pageToDisplay = 'home';
+        }
+        
+    }
+
+    if ($pageToDisplay === 'post') {
+        
+        if(!empty($_GET['id'])) {
+            $postToDisplay = $postsList[$_GET['id']];
         }
         else {
             $pageToDisplay = 'home';
