@@ -18,9 +18,9 @@
         <nav class="site-nav">
             <ul class="site-nav__list">
                 <li class="site-nav__item"><a class="site-nav__link" href="index.php">Home</a></li>
-                <li class="site-nav__item"><a class="site-nav__link">Catégorie 1</a></li>
-                <li class="site-nav__item"><a class="site-nav__link">Catégorie 2</a></li>
-                <li class="site-nav__item"><a class="site-nav__link">Catégorie 3</a></li>
+                <?php foreach ($categoriesList as $category) : ?>
+                    <li class="site-nav__item"><a class="site-nav__link"><?php echo $category->getName(); ?></a></li>
+                <?php endforeach; ?>
             </ul>
         </nav>
     </header>
