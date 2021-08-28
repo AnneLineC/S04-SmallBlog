@@ -53,7 +53,7 @@ $postsList = [];
 foreach ($postsArray as $post) {
     $postsList[$post['id']] = new Post(
         $post['title'],
-        $post['date'],
+        $post['published_date'],
         $post['content'],
         $categoriesList[$post['category_id']],
         $authorsList[$post['author_id']],
