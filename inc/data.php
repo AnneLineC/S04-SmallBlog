@@ -39,24 +39,24 @@ $postsArray = $pdoPosts->fetchAll(PDO::FETCH_ASSOC);
 // Construction des tableaux de données
 // ===============================================================
 
-$authorsList = [];
+$dataAuthorsList = [];
 foreach ($authorsArray as $author) {
-    $authorsList[$author['id']] = new Author($author['name']);
+    $dataAuthorsList[$author['id']] = new Author($author['name']);
 }
 
-$categoriesList = [];
+$dataCategoriesList = [];
 foreach ($categoriesArray as $category) {
-    $categoriesList[$category['id']] = new Category($category['name']);
+    $dataCategoriesList[$category['id']] = new Category($category['name']);
 }
 
-$postsList = [];
+$dataPostsList = [];
 foreach ($postsArray as $post) {
-    $postsList[$post['id']] = new Post(
+    $dataPostsList[$post['id']] = new Post(
         $post['title'],
         $post['published_date'],
         $post['content'],
-        $categoriesList[$post['category_id']],
-        $authorsList[$post['author_id']],
+        $dataCategoriesList[$post['category_id']],
+        $dataAuthorsList[$post['author_id']],
     );
 }
 

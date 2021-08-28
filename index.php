@@ -11,6 +11,19 @@
 
     // Tableaux de données reconstitués à partir de la BDD
     require 'inc/data.php';
+
+
+    // ===============================================================
+    // Récupération des données
+    // ===============================================================
+
+    require 'inc/data.php';
+
+    // Utilisation de variables intermédiaires pour mieux "cloisonner" la data
+    $authorsList = $dataAuthorsList;
+    $categoriesList = $dataCategoriesList;
+    $postsList = $dataPostsList; 
+
     
 
     // ===============================================================
@@ -25,6 +38,7 @@
     if (!empty($_GET['page'])) {
         $pageToDisplay = $_GET['page'];
     }
+
 
 
 
