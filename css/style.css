@@ -69,3 +69,12 @@ html {
 .post__category {
     text-decoration: underline;
 }
+
+.site-footer {
+    margin: 2rem 0 1rem;
+}
+
+.site-footer__text {
+    text-align: center;
+    font-size: 0.5rem;
+}
