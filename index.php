@@ -1,6 +1,19 @@
 <?php
 
     // ===============================================================
+    // Récupération des données nécessaires à toutes les pages
+    // ===============================================================
+    
+    // Classes
+    require 'inc/classes/Author.php';
+    require 'inc/classes/Category.php';
+    require 'inc/classes/Post.php';
+
+    // Tableaux de données reconstitués à partir de la BDD
+    require 'inc/data.php';
+    
+
+    // ===============================================================
     // Récupération de la page à afficher
     // ===============================================================
 
