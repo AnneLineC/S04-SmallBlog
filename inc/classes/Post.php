@@ -16,6 +16,10 @@ class Post {
         $this->author = $author;
     }
 
+    public function getDateFormated() {
+        return date('d/m/Y', strtotime($this->date));
+    }
+
     public function getTitle()
     {
         return $this->title;
