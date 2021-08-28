@@ -18,8 +18,8 @@
         <nav class="site-nav">
             <ul class="site-nav__list">
                 <li class="site-nav__item"><a class="site-nav__link" href="index.php">Home</a></li>
-                <?php foreach ($categoriesList as $category) : ?>
-                    <li class="site-nav__item"><a class="site-nav__link"><?php echo $category->getName(); ?></a></li>
+                <?php foreach ($categoriesList as $categoryId => $category) : ?>
+                    <li class="site-nav__item"><a href="index.php?page=category&id=<?php echo $categoryId; ?>" class="site-nav__link"><?php echo $category->getName(); ?></a></li>
                 <?php endforeach; ?>
             </ul>
         </nav>

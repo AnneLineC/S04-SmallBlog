@@ -40,6 +40,33 @@
     }
 
 
+    // ===============================================================
+    // Traitement des données par template
+    // ===============================================================
+
+    if ($pageToDisplay === 'category') {
+        
+        if(!empty($_GET['id'])) {
+            $categoryId = $_GET['id'];
+
+            // On récupère l'objet category à afficher selon l'ID indiqué en $_GET
+            $categoryToDisplay = $categoriesList[$categoryId];
+
+            // On prépare un tableau vide que l'on va remplir avec les articles correspondants à afficher
+            $postsFromCurrentCategory = [];
+
+            foreach ($postsList as $index => $post) {
+                if($post->getCategory()->getName() === $categoryToDisplay->getName()) {
+                    $postsFromCurrentCategory[$index] = $post;
+                }
+            }
+
+        }
+        else {
+            $pageToDisplay = 'home';
+        }
+        
+    }
 
 
     // ===============================================================
