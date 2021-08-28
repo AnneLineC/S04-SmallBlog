@@ -1,4 +1,4 @@
-<?php foreach ($postsFromCurrentCategory as $post) : ?>
+<?php foreach ($postsFromCurrentCategory as $postId => $post) : ?>
 
 <article class="post">
     <header class="post__header">
@@ -7,7 +7,7 @@
     </header>
     <section class="post__content">
         <p class="post__text">
-            <?php echo $post->getContent(); ?>
+            <?php echo $post->getResume() . '[&hellip;]'; ?>
         </p>
     </section>
 </article>

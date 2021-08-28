@@ -7,7 +7,7 @@
         </header>
         <section class="post__content">
             <p class="post__text">
-                <?php echo $post->getContent(); ?>
+                <?php echo $post->getResume() . '[&hellip;]'; ?>
             </p>
         </section>
     </article>

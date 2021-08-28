@@ -20,6 +20,10 @@ class Post {
         return date('d/m/Y', strtotime($this->date));
     }
 
+    public function getResume() {
+        return substr($this->content, 0, 200);
+    }
+
     public function getTitle()
     {
         return $this->title;
