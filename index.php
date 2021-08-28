@@ -68,6 +68,31 @@
         
     }
 
+    if ($pageToDisplay === 'author') {
+        
+        if(!empty($_GET['id'])) {
+            $authorId = $_GET['id'];
+
+            // On récupère l'objet category à afficher selon l'ID indiqué en $_GET
+            $authorToDisplay = $authorsList[$authorId];
+            var_dump($authorToDisplay);
+
+            // On prépare un tableau vide que l'on va remplir avec les articles correspondants à afficher
+            $postsFromCurrentAuthor = [];
+
+            foreach ($postsList as $index => $post) {
+                if($post->getAuthor()->getName() === $authorToDisplay->getName()) {
+                    $postsFromCurrentAuthor[$index] = $post;
+                }
+            }
+
+        }
+        else {
+            $pageToDisplay = 'home';
+        }
+        
+    }
+
 
     // ===============================================================
     // Affichage
