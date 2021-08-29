@@ -112,4 +112,40 @@
     require 'inc/templates/' . $pageToDisplay . '.tpl.php';
     require 'inc/templates/footer.tpl.php';
 
+
+
+    // ===============================================================
+    // Traitement du formulaire
+    // ===============================================================
+
+
+    if (!empty($_POST)) {
+        $title = $_POST['title'];
+        $date = $_POST['date'];
+        $content = $_POST['content'];
+        $categoryId = $_POST['category'];
+        $authorId = $_POST['author'];
+        
+        if ($title === '' || $date === '' || $content === '' || $categoryId === 0 || $authorId === 0) {
+            exit("Tous les champs doivent être remplis.");
+        }
+        
+        // Requête permettant d'insérer les données récupérées dans le formulaire
+        $insertQuery = "
+            INSERT INTO post (title, published_date, content, category_id, author_id)
+            VALUES ('{$title}', '{$date}', '{$content}', '{$categoryId}', '{$authorId}')
+        ";
+        
+        $affectedRows = $pdo->exec($insertQuery);
+    
+        if ($affectedRows === 1) {
+            header('Location: index.php');
+            exit();
+        } else {
+            exit("Erreur lors de l'ajout du jeu video");
+        }
+    
+
+    }
+
 ?>

@@ -21,6 +21,7 @@
                 <?php foreach ($categoriesList as $categoryId => $category) : ?>
                     <li class="site-nav__item"><a href="index.php?page=category&id=<?php echo $categoryId; ?>" class="site-nav__link"><?php echo $category->getName(); ?></a></li>
                 <?php endforeach; ?>
+                <li class="site-nav__item"><a class="site-nav__link" href="index.php?page=add-form">Rédiger</a></li>
             </ul>
         </nav>
     </header>
