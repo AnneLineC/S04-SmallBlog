@@ -23,7 +23,7 @@ $pdo = new PDO(
 
 $authorsQuery = 'SELECT * FROM `author`';
 $categoriesQuery = 'SELECT * FROM `category`';
-$postsQuery = 'SELECT * FROM `post`';
+$postsQuery = 'SELECT * FROM `post` ORDER BY `published_date` DESC';
 
 $pdoAuthors = $pdo->query($authorsQuery);
 $authorsArray = $pdoAuthors->fetchAll(PDO::FETCH_ASSOC);
